@@ -1,0 +1,324 @@
+:root {
+    --bg: #020617;
+    --bg-card: #020617;
+    --bg-gradient-1: #0f172a;
+    --bg-gradient-2: #1e293b;
+    --accent: #38bdf8;
+    --accent-soft: rgba(56, 189, 248, 0.12);
+    --text-main: #e5e7eb;
+    --text-muted: #9ca3af;
+    --border-subtle: #1f2937;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+/* ============================
+   Base Layout
+============================ */
+
+body {
+    margin: 0;
+    min-height: 100vh;
+    font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    color: var(--text-main);
+    background:
+        radial-gradient(circle at top left, #1e293b 0, transparent 55%),
+        radial-gradient(circle at bottom right, #020617 0, #020617 55%),
+        linear-gradient(135deg, var(--bg-gradient-1), var(--bg-gradient-2));
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 24px;
+}
+
+/* ============================
+   Card
+============================ */
+
+.card {
+    width: 100%;
+    max-width: 640px;
+    background: rgba(15, 23, 42, 0.92);
+    border-radius: 18px;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow:
+        0 18px 45px rgba(15, 23, 42, 0.65),
+        0 0 0 1px rgba(15, 23, 42, 0.6);
+    padding: 28px 26px 26px;
+    backdrop-filter: blur(18px);
+}
+
+/* Card Header */
+
+.card-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.logo-pill {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    background: radial-gradient(circle at 30% 30%, #38bdf8, #0ea5e9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #0b1120;
+    font-weight: 700;
+    font-size: 18px;
+    box-shadow:
+        0 0 0 1px rgba(15, 23, 42, 0.2),
+        0 10px 30px rgba(56, 189, 248, 0.4);
+}
+
+/* ============================
+   Typography
+============================ */
+
+.title {
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: 0.01em;
+    margin-bottom: 10px;
+}
+
+.subtitle {
+    font-size: 14px;
+    color: var(--text-muted);
+    margin-top: 4px;
+}
+
+.message {
+    font-size: 14px;
+    color: var(--text-main);
+    margin-bottom: 18px;
+}
+
+.muted {
+    font-size: 13px;
+    color: var(--text-muted);
+    margin-bottom: 18px;
+}
+
+.hint {
+    font-size: 12px;
+    color: var(--text-muted);
+    margin-bottom: 16px;
+}
+
+/* ============================
+   Badge
+============================ */
+
+.badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    border-radius: 999px;
+    padding: 4px 10px;
+    background: rgba(56, 189, 248, 0.10);
+    border: 1px solid rgba(56, 189, 248, 0.4);
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 0.12em;
+    color: #7dd3fc;
+    margin-bottom: 14px;
+}
+
+/* ============================
+   Form Controls
+============================ */
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+label {
+    font-size: 13px;
+    font-weight: 500;
+    color: var(--text-muted);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+}
+
+input[type="text"] {
+    padding: 11px 12px;
+    border-radius: 11px;
+    border: 1px solid var(--border-subtle);
+    background: rgba(15, 23, 42, 0.9);
+    color: var(--text-main);
+    font-size: 14px;
+    outline: none;
+    transition: border-color 0.15s ease, box-shadow 0.15s ease, background 0.15s ease;
+}
+
+input[type="text"]::placeholder {
+    color: #6b7280;
+}
+
+input[type="text"]:focus {
+    border-color: var(--accent);
+    box-shadow:
+        0 0 0 1px rgba(56, 189, 248, 0.4),
+        0 0 0 5px rgba(15, 23, 42, 0.9);
+    background: rgba(15, 23, 42, 0.95);
+}
+
+/* ============================
+   Info Blocks
+============================ */
+
+.info {
+    border-radius: 14px;
+    border: 1px solid rgba(31, 41, 55, 0.9);
+    background: rgba(15, 23, 42, 0.9);
+    padding: 14px 16px;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr);
+    gap: 10px;
+    margin-bottom: 18px;
+}
+
+.info-row {
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+    font-size: 14px;
+}
+
+.label {
+    color: #9ca3af;
+}
+
+.value {
+    font-weight: 500;
+    text-align: right;
+}
+
+/* Pills */
+
+.pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    border-radius: 999px;
+    padding: 4px 10px;
+    font-size: 12px;
+}
+
+.pill.ok {
+    background: rgba(22, 163, 74, 0.12);
+    color: #4ade80;
+    border: 1px solid rgba(34, 197, 94, 0.6);
+}
+
+.pill.bad {
+    background: rgba(220, 38, 38, 0.12);
+    color: #fca5a5;
+    border: 1px solid rgba(239, 68, 68, 0.6);
+}
+
+/* ============================
+   Buttons
+============================ */
+
+a.button,
+button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    padding: 8px 14px;
+    border-radius: 999px;
+    font-size: 13px;
+    text-decoration: none;
+    transition: background 0.15s ease, border-color 0.15s ease;
+    cursor: pointer;
+}
+
+a.button {
+    border: 1px solid rgba(148, 163, 184, 0.4);
+    color: #e5e7eb;
+}
+
+a.button:hover {
+    background: rgba(31, 41, 55, 0.9);
+}
+
+a.button.primary {
+    background: radial-gradient(circle at 30% 30%, #38bdf8, #0ea5e9);
+    border-color: transparent;
+    color: #0b1120;
+    font-weight: 500;
+    box-shadow: 0 10px 30px rgba(56, 189, 248, 0.45);
+}
+
+a.button.primary:hover {
+    filter: brightness(1.03);
+}
+
+/* Button element */
+
+button {
+    border: none;
+    padding: 9px 18px;
+    font-size: 14px;
+    font-weight: 500;
+    background: radial-gradient(circle at 30% 30%, #38bdf8, #0ea5e9);
+    color: #0b1120;
+    box-shadow: 0 10px 35px rgba(56, 189, 248, 0.45);
+    transition: transform 0.12s ease, box-shadow 0.12s ease, filter 0.12s ease;
+}
+
+button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 14px 40px rgba(56, 189, 248, 0.55);
+    filter: brightness(1.03);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 8px 24px rgba(56, 189, 248, 0.35);
+}
+
+/* ============================
+   Footer
+============================ */
+
+.footer {
+    margin-top: 18px;
+    padding: 10px 12px;
+    border-radius: 12px;
+    background: radial-gradient(circle at top left, var(--accent-soft), transparent);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    font-size: 12px;
+    color: var(--text-muted);
+    display: flex;
+    justify-content: space-between;
+    gap: 12px;
+}
+
+/* ============================
+   Responsive
+============================ */
+
+@media (max-width: 480px) {
+    .card {
+        padding: 22px 18px 18px;
+    }
+
+    .title {
+        font-size: 20px;
+    }
+
+    .subtitle {
+        font-size: 13px;
+    }
+}
